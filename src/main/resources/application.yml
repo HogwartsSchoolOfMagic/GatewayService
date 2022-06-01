@@ -1,0 +1,19 @@
+# Basic server properties
+server:
+  port: ${GATEWAY_PORT:9000}
+
+# Basic spring properties
+spring:
+  # Application
+  application:
+    name: ${GATEWAY_APPLICATION_NAME:gateway-service}
+
+# Basic actuator properties
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${ACTUATOR_ENDPOINTS:*}
+  endpoint:
+    health:
+      show-details: ${ACTUATOR_HEALTH_SHOW_DETAILS:always}
